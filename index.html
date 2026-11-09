@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ЕнергоОпора — енергонезалежність для малого та середнього бізнесу</title>
+<meta name="description" content="Енергоаудит, резервне й автономне живлення під ключ та сервісний абонемент для бізнесу в Києві та Україні.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600&family=Unbounded:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="top">
+  <a class="logo" href="#top">ЕнергоОпора</a>
+  <nav aria-label="Основна навігація">
+    <a href="#services">Послуги</a>
+    <a href="#calc">Калькулятор</a>
+    <a href="#process">Як ми працюємо</a>
+    <a href="#audit" class="btn small">Замовити аудит</a>
+  </nav>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="hero-text">
+      <h1>Світло зникло. Ваш бізнес працює.</h1>
+      <p>Перевіряємо, скільки енергії потрібно вашому закладу, рахуємо окупність до початку робіт і встановлюємо резервне живлення під ключ. Ви маєте одного відповідального виконавця й сервіс після монтажу.</p>
+      <a href="#audit" class="btn">Замовити енергоаудит</a>
+    </div>
+
+    <div class="demo" id="demo" data-grid="on">
+      <div class="demo-head">
+        <span>Приклад: магазин із системою «ЕнергоОпора»</span>
+        <button type="button" id="toggle" class="btn ghost">Вимкнути світло в мережі</button>
+      </div>
+      <ul class="status">
+        <li><span>Міська мережа</span><b id="s-grid">Є напруга</b></li>
+        <li><span>Джерело живлення</span><b id="s-src">Мережа + сонце</b></li>
+        <li><span>Холодильна вітрина</span><b class="ok">Працює</b></li>
+        <li><span>Каса й термінал</span><b class="ok">Працює</b></li>
+        <li><span>Освітлення</span><b class="ok">Працює</b></li>
+      </ul>
+      <p class="demo-note" id="demo-note">Натисніть кнопку, щоб побачити, як система перемикається на акумулятор.</p>
+    </div>
+  </section>
+
+  <section id="services" class="block">
+    <h2>Три послуги в одному договорі</h2>
+    <div class="cols">
+      <article>
+        <h3>Енергоаудит з ТЕО</h3>
+        <p>Визначаємо критичне навантаження, підбираємо конфігурацію й показуємо економіку проєкту. Допомагаємо з програмами підтримки та фінансуванням.</p>
+        <p class="price">від 20 000 грн <small>зараховується у вартість проєкту</small></p>
+      </article>
+      <article>
+        <h3>Система «під ключ»</h3>
+        <p>Проєктуємо, закуповуємо обладнання, монтуємо й налаштовуємо сонячну станцію, гібридний інвертор і акумулятори з автоматичним перемиканням.</p>
+        <p class="price">типовий проєкт ≈ 900 000 грн <small>СЕС 30 кВт + накопичувач 40 кВт·год</small></p>
+      </article>
+      <article>
+        <h3>Сервіс і моніторинг</h3>
+        <p>Технічне обслуговування, віддалений контроль системи та пріоритетний виїзд, якщо щось пішло не так.</p>
+        <p class="price">1 500 грн/міс <small>без ПДВ</small></p>
+      </article>
+    </div>
+  </section>
+
+  <section id="calc" class="block alt">
+    <h2>Оцініть систему та окупність за хвилину</h2>
+    <div class="calc">
+      <div class="fields">
+        <label>Споживання за добу, кВт·год
+          <input type="number" id="c-day" value="80" min="10" max="2000">
+        </label>
+        <label>Тариф на електроенергію, грн/кВт·год
+          <input type="number" id="c-tariff" value="12" min="4" max="30" step="0.5">
+        </label>
+        <label>Критичне навантаження, кВт
+          <input type="number" id="c-load" value="10" min="1" max="500" step="0.5">
+        </label>
+        <label>Потрібен резерв, годин
+          <input type="number" id="c-hours" value="4" min="1" max="24">
+        </label>
+      </div>
+      <div class="result" aria-live="polite">
+        <dl>
+          <div><dt>Сонячна станція</dt><dd id="r-kw">—</dd></div>
+          <div><dt>Накопичувач</dt><dd id="r-kwh">—</dd></div>
+          <div><dt>Орієнтовна вартість</dt><dd id="r-cost">—</dd></div>
+          <div><dt>Економія на рік</dt><dd id="r-save">—</dd></div>
+          <div class="big"><dt>Окупність</dt><dd id="r-pay">—</dd></div>
+        </dl>
+        <p class="hint">Попередня оцінка за середніми цінами ринку 2026 року. Точний розрахунок і ТЕО ви отримаєте після аудиту.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="process" class="block">
+    <h2>Як ми працюємо</h2>
+    <ol class="steps">
+      <li><b>Заявка.</b> Ви залишаєте контакти, ми кваліфікуємо запит у CRM.</li>
+      <li><b>Енергоаудит і ТЕО.</b> Виїжджаємо на об’єкт і рахуємо окупність.</li>
+      <li><b>Пропозиція й договір.</b> Підписуємо онлайн за КЕП, ціна фіксується.</li>
+      <li><b>Проєкт і закупівля.</b> Підбираємо обладнання у перевірених дистриб’юторів.</li>
+      <li><b>Монтаж і запуск.</b> Монтують бригади під контролем нашого інженера, потім навчаємо вашу команду.</li>
+      <li><b>Сервіс.</b> Моніторимо систему й реагуємо на несправності.</li>
+    </ol>
+  </section>
+
+  <section class="block alt">
+    <h2>Кому це потрібно</h2>
+    <p class="lead">Бізнесу, де втрата світла означає втрату виручки: кафе й магазинам, салонам краси та клінікам, автосервісам, невеликим виробництвам, складам із холодильниками, аграрним господарствам і офісам.</p>
+  </section>
+
+  <section id="audit" class="block">
+    <h2>Замовити енергоаудит</h2>
+    <form id="form" class="form" novalidate>
+      <label>Ім’я
+        <input type="text" id="f-name" required autocomplete="name">
+      </label>
+      <label>Телефон або Telegram
+        <input type="text" id="f-contact" required>
+      </label>
+      <label>Тип бізнесу
+        <select id="f-type">
+          <option>Заклад харчування або торгівлі</option>
+          <option>Салон краси або клініка</option>
+          <option>Автосервіс</option>
+          <option>Виробництво або склад</option>
+          <option>Аграрне господарство</option>
+          <option>Офіс або IT-компанія</option>
+        </select>
+      </label>
+      <button type="submit" class="btn">Надіслати заявку</button>
+      <p id="form-msg" class="form-msg" role="status"></p>
+    </form>
+  </section>
+</main>
+
+<footer>
+  <p>© Астахов Ігор Ігорович, 2026. Сайт розроблено студентом групи ФЕМП 3-16.</p>
+  <p><a href="mailto:i.astakhov_femp_16_24_b_d@knute.edu.ua">i.astakhov_femp_16_24_b_d@knute.edu.ua</a></p>
+</footer>
+<script src="script.js"></script>
+</body>
+</html>
